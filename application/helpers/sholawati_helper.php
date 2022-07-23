@@ -6,9 +6,7 @@ function is_logged_in() // batasi akses ke halaman admin
         redirect('auth');
     } else {
         $role = $ci->session->userdata('role');
-        if ($role == "Admin" || $role == 'Pegawai') {
-            redirect('dashboard');
-        } else {
+        if ($role != 'Admin' && $role != 'Pegawai') {
             redirect('profil');
         }
     }
@@ -21,10 +19,11 @@ function is_logged_in2()
     } else {
         $role = $ci->session->userdata('role');
         if ($role != "User") {
-            redirect('obat');
+            redirect('dashboard');
         }
     }
 }
+
 function is_logged_in3()
 {
     $ci = get_instance();
@@ -32,8 +31,10 @@ function is_logged_in3()
         redirect('auth');
     } else {
         $role = $ci->session->userdata('role');
-        if ($role != "User") {
+        if ($role != "Admin") {
             redirect('dashboard');
+        } else if ($role == 'User') {
+            redirect('profil');
         }
     }
 }
