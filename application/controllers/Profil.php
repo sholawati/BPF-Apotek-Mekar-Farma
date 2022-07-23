@@ -6,7 +6,7 @@ class Profil extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // is_logged_in();
+        is_logged_in2();
         $this->load->model('User_model', 'userrole');
         $this->load->model('Obat_model');
         $this->load->model('Keranjang_model');
