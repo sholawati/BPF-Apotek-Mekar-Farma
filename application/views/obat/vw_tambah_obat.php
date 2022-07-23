@@ -42,8 +42,8 @@
                                            <select name="status" value="<?= set_value('status') ?>" class="form-control"
                                                id="status" placeholder="Jenis Obat">
                                                <option value="">Jenis Obat</option>
-                                               <option value="Laki-laki">Obat Biasa</option>
-                                               <option value="Perempuan">Obat Keras</option>
+                                               <option value="Obat Biasa">Obat Biasa</option>
+                                               <option value="Obat Keras">Obat Keras</option>
                                            </select>
                                            <?= form_error('status', '<small class="text-danger pl-3">', '</small>'); ?>
                                        </div>
